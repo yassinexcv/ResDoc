@@ -33,6 +33,7 @@ require_once APPROOT . "/models/User.php";
            
           $data=json_decode(file_get_contents('php://input'), true); 
           $reference=$data['reference'];
+         
         //   die(var_dump($reference));
 
            $use= $this->model->login([$reference]);

@@ -22,17 +22,17 @@
                     <form class="myform">
       
                       <div class="form-outline mb-4">
-                        <input type="text"  id="form3Example1cg" class="form-control form-control-lg nom" />
+                        <input type="text" required id="form3Example1cg" class="form-control form-control-lg nom" />
                         <label class="form-label" for="form3Example1cg"> Ton Nom</label>
                       </div>
       
                       <div class="form-outline mb-4">
-                        <input type="text" id="form3Example3cg" class="form-control form-control-lg Prenom" />
+                        <input type="text" required id="form3Example3cg" class="form-control form-control-lg Prenom" />
                         <label class="form-label" for="form3Example3cg"> Ton Prénom</label>
                       </div>
       
                         <div class="form-outline mb-4">
-                            <input type="date" id="form3Example2cg" class="form-control form-control-lg Naissance" />
+                            <input type="date" required id="form3Example2cg" class="form-control form-control-lg Naissance" />
                             <label class="form-label" for="form3Exame2cg">Ta Date de Naissance</label>
       
                       <div class="form-check d-flex justify-content-center mb-5">
@@ -51,7 +51,7 @@
                         <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                       </div>
       
-                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="./login.html" class="fw-bold text-body"><u>Login here</u></a></p>
       
                     </form>
       
@@ -91,7 +91,7 @@
 
           fetch("http://localhost/ResDoc/User/register", requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => alert(result))
             .catch(error => console.log('error', error));
         })
 
