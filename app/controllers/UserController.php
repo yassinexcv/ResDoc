@@ -27,6 +27,7 @@ require_once APPROOT . "/models/User.php";
             $ref = $this->randomString();
             extract(json_decode(file_get_contents('php://input'), true)); 
             $this->model->register([$ref,$nom,$prenom,$datenaisance]);
+            echo json_encode($ref);
         }
         public function login(){
            
