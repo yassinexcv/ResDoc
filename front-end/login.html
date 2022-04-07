@@ -53,6 +53,10 @@
         </div>
       </section>
       <script>
+
+                var ref = document.getElementById("form3Example2cg").value;
+                
+
                 const form = document.querySelector(".maform");
                 form.addEventListener("submit", (e) => {
                     e.preventDefault();
@@ -73,8 +77,10 @@
                     };
 
                     fetch("http://localhost/ResDoc/User/login", requestOptions)
-                    .then(response => response.text())
-                    .then(result =>alert(result))
+                    .then(response => response.json())
+                    .then(res => {
+                      localStorage.setItem('ref', JSON.stringify(res));
+                      window.location.href = "./HomeClient.html";})
                     .catch(error => console.log('error', error));
                 });
                 
