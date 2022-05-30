@@ -52,40 +52,6 @@
           </div>
         </div>
       </section>
-      <script>
-
-                var ref = document.getElementById("form3Example2cg").value;
-                
-
-                const form = document.querySelector(".maform");
-                form.addEventListener("submit", (e) => {
-                    e.preventDefault();
-                   
-                    const reference = document.querySelector(".reference").value;
-                    var myHeaders = new Headers();
-                    myHeaders.append("Content-Type", "application/json");
-
-                    var raw = JSON.stringify({
-                    "reference": reference
-                    });
-
-                    var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: 'follow'
-                    };
-
-                    fetch("http://localhost/ResDoc/User/login", requestOptions)
-                    .then(response => response.json())
-                    .then(res => {
-                      localStorage.setItem('ref', JSON.stringify(res));
-                      window.location.href = "./HomeClient.html";})
-                    .catch(error => console.log('error', error));
-                });
-                
-                
-        
-      </script>
+      <script src="./style/js/login.js"></script>
 </body>
 </html>

@@ -12,20 +12,26 @@
        
         public function addRendezVous(){
             extract(json_decode(file_get_contents('php://input'), true)); 
-            $this->model->add([$day, $order_, $reference]);
+            if (!$this->model->add([$day, $order_, $reference])){ echo json_encode('Deja reserve');}
+            else {echo json_encode('Reservation effectuee');}
         }
-        public function getAllRendezVous(){
+
+        public function getAllRendezVous(){    
             $data = $this->model->getAll();
             echo json_encode($data);
         }
-        public function getOneRendezVous($id){
-            $data = $this->model->getOne($id);
+
+        public function getOneRendezVous(){
+            extract(json_decode(file_get_contents('php://input'), true));
+            $data = $this->model->getOne($reference);
             echo json_encode($data);
         }
+
         public function updateRendezVous(){
             extract(json_decode(file_get_contents('php://input'), true)); 
-            $this->model->update([$day, $order_, $reference, $id]);
+            $this->model->update([$day, $order_, $id]);
         }
+
         public function deleteRendezVous(){
             extract(json_decode(file_get_contents('php://input'), true)); 
             $this->model->delete($id);
